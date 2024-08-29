@@ -1,0 +1,93 @@
+{% extends 'ecom/homebase.html' %}
+{% load static %}
+{% block content %}
+    <body>
+      <main role="main">
+          <div class="container mt-4">
+  
+              <div class="card">
+                  <div class="container-fliud">
+                      <form name="frmsanphamchitiet" id="frmsanphamchitiet" method="post"
+                          action="">
+  
+                          <div class="wrapper row">
+                              <div class="preview col-md-6">
+                                  <div class="preview-pic tab-content">
+                                      <div class="tab-pane" id="pic-1">
+                                          <img src="{% static product.product_image.url %}">
+                                      </div>
+                                      <div class="tab-pane" id="pic-2">
+                                        <img src="{% static product.product_image.url %}">
+                                    </div>
+                                    <div class="tab-pane" id="pic-3">
+                                      <img src="{% static product.product_image.url %}">
+                                  </div>
+                                  <ul class="preview-thumbnail nav nav-tabs">
+                                    <li class="active">
+                                        <a data-target="#pic-1" data-toggle="tab" class="">
+                                            <img src="{% static product.product_image.url %}">
+                                        </a>
+                                    </li>
+                                </ul>
+                                      
+                                  </div>
+                                  
+                              </div>
+                              <div class="details col-md-6">
+                                  <h3 class="product-title">{{ product.name }}</h3>
+                                  <div class="rating">
+                                      <div class="stars">
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star checked"></span>
+                                          <span class="fa fa-star"></span>
+                                          <span class="fa fa-star"></span>
+                                      </div>
+                                      <span class="review-no">999 reviews</span>
+                                  </div>
+                                  <p class="product-description">{{ product.description}}</p>
+                                  <small class="text-muted">Giá cũ: <s><span>50.000 $</span></s></small>
+                                  <h4 class="price">Giá hiện tại: <span>{{ product.price }}$</span></h4>
+                                  <p class="vote"><strong>100%</strong> hàng <strong>Chất lượng</strong>, đảm bảo
+                                      <strong>Uy
+                                          tín</strong>!</p>
+                                  
+                                  
+                                  <div class="form-group">
+                                      <label for="soluong">Số lượng đặt mua:</label>
+                                      <input type="number" class="form-control" id="soluong" name="soluong">
+                                  </div>
+                                  <div class="action">
+                                    <a class="cart" href="{% url 'add-to-cart' product.id  %}">
+                                      <span class="add-to-cart">
+                                        <span class="txt" style = "border solid 1px"><i class="fa fa-shopping-cart"></i>Thêm vào giỏ hàng</span>
+                                      </span>
+                                    </a>
+                                  </div>
+                              </div>
+  
+                          </div>
+                      </form>
+                  </div>
+              </div>
+  
+              
+          </div>
+          <!-- End block content -->
+      </main>
+  
+      <!-- footer -->
+      
+      <!-- end footer -->
+  
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="../vendor/jquery/jquery.min.js"></script>
+      <script src="../vendor/popperjs/popper.min.js"></script>
+      <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
+  
+      <!-- Custom script - Các file js do mình tự viết -->
+      <script src="../assets/js/app.js"></script>
+  
+  </body>
+{% endblock content %}
